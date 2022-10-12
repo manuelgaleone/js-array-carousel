@@ -43,3 +43,10 @@ main {
 .arrow_icon {
     padding: 20px;
 }
+
+.arrow:hover {
+    background-color: lightgray;
+    cursor:pointer;
+    color: white;
+    transition: 0.3s;
+}
