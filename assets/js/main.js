@@ -6,7 +6,7 @@ let slideImages = [
     "../assets/img/04.webp",
     "../assets/img/05.webp",
 ]
-let activeImage = 1
+let activeImage = 0
 
 //Ciclo selezione Immagini
 for (let i = 0; i < slideImages.length; i++) {
@@ -16,7 +16,7 @@ for (let i = 0; i < slideImages.length; i++) {
     </div>`
 }
 
-document.getElementsByClassName('imgContainer')[activeImg].classList.add('active');
+document.getElementsByClassName('imgContainer')[activeImage].classList.add('active');
 
 //Collego bottone prossima immagine
 let next = document.getElementById("arrowButton");
@@ -25,12 +25,12 @@ let next = document.getElementById("arrowButton");
     
     document.querySelector('.imgContainer.active').classList.remove('active');
 
-    document.getElementsByClassName('imgContainer')[activeImg].classList.add('active');
+    document.getElementsByClassName('imgContainer')[activeImage].classList.add('active');
 
-    if (activeImg === slideImages.length - 1) {
-        activeImg = 0;
+    if (activeImage === slideImages.length - 1) {
+        activeImage = 0;
     } else {
-        activeImg++;
+        activeImage++;
     }
 
 }

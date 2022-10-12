@@ -51,6 +51,10 @@ main {
     transition: 0.3s;
 }
 
+.noActive {
+    display: none;
+}
+
 .active {
     display: block;
 }
