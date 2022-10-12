@@ -1,4 +1,4 @@
-//Creo Array con i percorsi delle 5 immagini
+//Array con i percorsi delle Immagini
 let slideImages = [
     "../assets/img/01.webp",
     "../assets/img/02.webp",
@@ -7,20 +7,20 @@ let slideImages = [
     "../assets/img/05.webp",
 ]
 
-//Genero nell'HTML le IMG ed assegno loro ID e CLASSE
+//Creo le IMG nell'HTML e collego slideImages
 let img = document.createElement("img");
-img.src = slideImages;
+img.src = [slideImages[0]];
 
+//Inserisco le IMG nel DIV Container
 let div = document.getElementById("imgContainer");
 div.appendChild(img);
 
 img.setAttribute("id", "imgCarousel")
 document.getElementById("imgCarousel").classList.add('imgCarousel');
-document.getElementById("imgCarousel").classList.add('active');
 
 //Collego pulsante
 let arrowButton = document.getElementById("arrowButton");
 
 arrowButton.onclick = function() {
-    alert("ciao!")
+    document.getElementById("imgCarousel").classList.add('active');
 }
