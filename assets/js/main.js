@@ -6,21 +6,32 @@ let slideImages = [
     "../assets/img/04.webp",
     "../assets/img/05.webp",
 ]
+let activeImage = 1
 
-//Creo le IMG nell'HTML e collego slideImages
-let img = document.createElement("img");
-img.src = [slideImages[0]];
-
-//Inserisco le IMG nel DIV Container
-let div = document.getElementById("imgContainer");
-div.appendChild(img);
-
-img.setAttribute("id", "imgCarousel")
-document.getElementById("imgCarousel").classList.add('imgCarousel');
-
-//Collego pulsante
-let arrowButton = document.getElementById("arrowButton");
-
-arrowButton.onclick = function() {
-    document.getElementById("imgCarousel").classList.add('active');
+//Ciclo selezione Immagini
+for (let i = 0; i < slideImages.length; i++) {
+    imgContainer.innerHTML +=
+    `<div class="imgContainer">
+        <img class="imgCarousel" src="${slideImages[i]}">
+    </div>`
 }
+
+document.getElementsByClassName('imgContainer')[activeImg].classList.add('active');
+
+//Collego bottone prossima immagine
+let next = document.getElementById("arrowButton");
+
+    next.addEventListener('click', function () {
+    
+    document.querySelector('.imgContainer.active').classList.remove('active');
+
+    document.getElementsByClassName('imgContainer')[activeImg].classList.add('active');
+
+    if (activeImg === slideImages.length - 1) {
+        activeImg = 0;
+    } else {
+        activeImg++;
+    }
+
+}
+)

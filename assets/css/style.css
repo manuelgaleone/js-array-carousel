@@ -50,3 +50,7 @@ main {
     color: white;
     transition: 0.3s;
 }
+
+.active {
+    display: block;
+}
