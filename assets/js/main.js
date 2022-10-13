@@ -40,6 +40,7 @@ let next = document.getElementById("arrowButton");
 
 */
 
+//Creo la Variabile con le Immagini
 let slidesImages = [
     "../assets/img/01.webp",
     "../assets/img/02.webp",
@@ -47,3 +48,36 @@ let slidesImages = [
     "../assets/img/04.webp",
     "../assets/img/05.webp"
 ];
+
+//Immagine Attiva
+let imgActive = 0;
+
+//Seleziono gli elementi nella DOM
+let slidesEl = document.querySelector(".slides");
+let prevEl = document.querySelector(".prev");
+let nextEl = document.querySelector(".next");
+
+//Inserisco le Immagini
+for (i = 0; i < slidesImages.length; i++) {
+
+    let slidesCol = slidesImages[i];
+    let imgEl = `<img class="imgCarousel ${i === imgActive ? 'active' : ''} " src=${slidesCol} alt="Carousel">`;
+
+    slidesEl.insertAdjacentHTML("beforeend", imgEl);
+
+};
+
+//Collego Click ai Bottoni
+nextEl.addEventListener("click", function(){
+
+    //Cambiare imgActive e sposto classe Active
+        //Selezionare l'Img Attiva 
+            //Rimuovi la classe Active e dalla all'Img Seguente
+    let activeSlide = document.querySelector(".slides > img.active");
+    activeSlide.classList.remove("active");
+    imgActive++;
+    const slidesAll = document.getElementsByClassName("imgCarousel");
+    const nextSlideEl = slidesAll[activeSlide];
+    nextSlideEl.classList.add("active");
+
+});
