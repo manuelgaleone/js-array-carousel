@@ -1,10 +1,6 @@
+/*General*/
 main {
     height: 100vh;
-}
-
-.imgContainer {
-    height: 600px;
-    width: 1400px;
 }
 
 .d_flex {
@@ -23,6 +19,8 @@ main {
     align-self: flex-end;
 }
 
+
+/*Main*/
 .imgCarousel {
     height: 600px;
     width: 1400px;
@@ -31,17 +29,11 @@ main {
 
 .arrow {
     background-color: white;
-    position: absolute;
     color: black;
-    padding: 20px;
     font-size: 20px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-}
-
-.arrow_icon {
-    padding: 20px;
 }
 
 .arrow:hover {
@@ -51,10 +43,21 @@ main {
     transition: 0.3s;
 }
 
-.noActive {
+.slides img:not(img.active) {
     display: none;
 }
 
-.active {
+.slides img.active {
     display: block;
+}
+
+.controls {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
 }
