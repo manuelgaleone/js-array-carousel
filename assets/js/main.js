@@ -76,8 +76,20 @@ nextEl.addEventListener("click", function(){
     let activeSlide = document.querySelector(".slides > img.active");
     activeSlide.classList.remove("active");
     imgActive++;
-    const slidesAll = document.getElementsByClassName("imgCarousel");
-    const nextSlideEl = slidesAll[activeSlide];
-    nextSlideEl.classList.add("active");
+    let slidesAll = document.getElementsByClassName("imgCarousel");
+    let nextSlide = slidesAll[imgActive];
+    nextSlide.classList.add("active");
+});
 
+prevEl.addEventListener("click", function(){
+
+    //Cambiare imgActive e sposto classe Active
+        //Selezionare l'Img Attiva 
+            //Rimuovi la classe Active e dalla all'Img Seguente
+    let activeSlide = document.querySelector(".slides > img.active");
+    activeSlide.classList.remove("active");
+    imgActive--;
+    let slidesAll = document.getElementsByClassName("imgCarousel");
+    let nextSlide = slidesAll[imgActive];
+    nextSlide.classList.add("active");
 });
